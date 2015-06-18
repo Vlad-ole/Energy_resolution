@@ -13,10 +13,15 @@
 #include "TRandom2.h"
 #include "TError.h"
 
+#include "interpolate.h"
+
 using namespace std;
 
 int main()
 {
+	interpolate* LYSO = new interpolate("D:\\git_repositories\\Geant_simulation\\data\\intrinsic_resolution\\yap_ce_keV_1.dat");
+
+
 	ofstream file_out("D:\\git_repositories\\Energy_resolution\\out.dat");
 	ER ER_object;
 
