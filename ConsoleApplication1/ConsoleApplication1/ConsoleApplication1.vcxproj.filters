@@ -21,9 +21,15 @@
     <ClCompile Include="ER.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="interpolate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ER.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interpolate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -54,15 +54,18 @@ void ER::Get_n_pe_DC(double p)
 	E_n_pe_DC = P1 * 1 + P2 * 2 + P3 * 3 + P4 * 4 + P5 * 5;
 	double E2_n_pe_DC = P1 * 1 + P2 * 4 + P3 * 9 + P4 * 16 + P5 * 25;
 
+
 	if (p != 0)
 	{
 		for (int i = 6; i < 100000; i++)
 		{
 			E_n_pe_DC += P5 * pow(1 - P5 / (1 - P1234), i - 5) * i;
 			E2_n_pe_DC += P5 * pow(1 - P5 / (1 - P1234), i - 5) * pow(i, 2);
+			
 		}
 	}
 
 	Var_n_pe_DC = E2_n_pe_DC - pow(E_n_pe_DC, 2);
+
 
 }

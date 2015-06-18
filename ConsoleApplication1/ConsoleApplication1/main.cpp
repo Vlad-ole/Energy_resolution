@@ -3,6 +3,16 @@
 #include <string>
 #include "ER.h"
 
+#include "Math/Interpolator.h"
+#include "Math/GSLMinimizer.h"
+#include "Math/Functor.h"
+
+#include "Math/Minimizer.h"
+#include "Math/Factory.h"
+#include "Math/Functor.h"
+#include "TRandom2.h"
+#include "TError.h"
+
 using namespace std;
 
 int main()
