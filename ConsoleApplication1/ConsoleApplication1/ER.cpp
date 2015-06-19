@@ -11,22 +11,10 @@ ER::~ER()
 {
 }
 
-double ER::GetER() const
+double ER::GetER()
 {
 	const double E_N_DC = t_gate * nu_DC;
 	
-	const double E_N_born = energy * light_yield;
-	const double Var_N_born = E_N_born; //simple case
-
-	//double p = 0; //x-talk parameter
-	
-	//double E_n_pe_DC = ;
-	//double Var_n_pe_DC = ;
-
-	const double Conv = 0.5;
-	const double E_n_abs = Conv;
-	const double Var_n_abs = Conv * (1 - Conv);
-
 	const double Var_N_abs = Var_N_born *pow(E_n_abs, 2) + Var_n_abs * E_N_born;
 	const double E_N_abs = E_n_abs * E_N_born;
 
@@ -36,7 +24,8 @@ double ER::GetER() const
 	//double Var_G_tot;
 	//double E_G_tot;
 	
-	return Var_Npe / pow(E_Npe, 2) + Var_G_tot / pow(E_G_tot, 2) * 1 / (E_Npe);
+	return sqrt(Var_Npe / pow(E_Npe, 2) + Var_G_tot / pow(E_G_tot, 2) * 1 / (E_Npe)) * Delta;
+	//return E_Npe;
 }
 
 void ER::Get_n_pe_DC(double p)

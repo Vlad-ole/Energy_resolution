@@ -5,7 +5,7 @@ public:
 	ER();
 	~ER();
 
-	double GetER() const;
+	double GetER();
 
 
 	void Get_n_pe_DC(double p);
@@ -26,5 +26,11 @@ public:
 	double nu_DC;
 	double energy;
 	double light_yield;
+
+	double E_N_born;
+	double Var_N_born;
+
+	double E_n_abs;
+	double Var_n_abs;
 };
 
