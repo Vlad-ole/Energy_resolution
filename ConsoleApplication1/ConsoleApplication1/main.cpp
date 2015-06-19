@@ -55,11 +55,13 @@ int main()
 		//file_out << i << "\t" << sqrt( (1 - ER_object.epsilon) / ER_object.epsilon * 1 / (ER_object.E_N_born * ER_object.E_n_abs) ) * ER_object.Delta << endl;
 		//file_out << i << "\t" << sqrt(ER_object.Var_G_tot) / ER_object.E_G_tot * ER_object.Delta * 1 / (ER_object.E_N_born * ER_object.E_n_abs * ER_object.epsilon) << endl;
 
-		file_out << i << "\t" << sqrt(pow(sqrt(ER_object.Var_N_born) / ER_object.E_N_born * ER_object.Delta, 2) +
+		/*file_out << i << "\t" << sqrt(pow(sqrt(ER_object.Var_N_born) / ER_object.E_N_born * ER_object.Delta, 2) +
 			pow(sqrt(ER_object.Var_n_abs) / ER_object.E_n_abs * ER_object.Delta * 1 / ER_object.E_N_born, 2) + 
 			pow(sqrt((1 - ER_object.epsilon) / ER_object.epsilon * 1 / (ER_object.E_N_born * ER_object.E_n_abs)) * ER_object.Delta, 2) +
 			pow(sqrt(ER_object.Var_G_tot) / ER_object.E_G_tot * ER_object.Delta * 1 / (ER_object.E_N_born * ER_object.E_n_abs * ER_object.epsilon), 2)) 
-			<< endl;
+			<< endl;*/
+
+		file_out << i << "\t" << ER_object.GetER() << endl;
 	}
 
 

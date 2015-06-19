@@ -11,21 +11,31 @@ ER::~ER()
 {
 }
 
+//double ER::GetER()
+//{
+//	const double E_N_DC = t_gate * nu_DC;
+//	
+//	const double Var_N_abs = Var_N_born *pow(E_n_abs, 2) + Var_n_abs * E_N_born;
+//	const double E_N_abs = E_n_abs * E_N_born;
+//
+//	const double Var_Npe = (Var_N_abs * pow(E_n_pe_DC, 2) + Var_n_pe_DC * E_N_abs)* pow(epsilon, 2) + (pow(E_n_pe_DC, 2) + Var_n_pe_DC) * E_N_DC;
+//	const double E_Npe = E_n_pe_DC * (epsilon * E_N_abs + E_N_DC);
+//
+//	
+//	return sqrt(Var_Npe / pow(E_Npe, 2) + Var_G_tot / pow(E_G_tot, 2) * 1 / (E_Npe)) * Delta;
+//
+//
+//}
+
 double ER::GetER()
 {
-	const double E_N_DC = t_gate * nu_DC;
-	
 	const double Var_N_abs = Var_N_born *pow(E_n_abs, 2) + Var_n_abs * E_N_born;
 	const double E_N_abs = E_n_abs * E_N_born;
 
-	const double Var_Npe = (Var_N_abs * pow(E_n_pe_DC, 2) + Var_n_pe_DC * E_N_abs)* pow(epsilon, 2) + (pow(E_n_pe_DC, 2) + Var_n_pe_DC) * E_N_DC;
-	const double E_Npe = E_n_pe_DC * (epsilon * E_N_abs + E_N_DC);
-
-	//double Var_G_tot;
-	//double E_G_tot;
+	const double Var_Npe = Var_N_abs * pow(epsilon, 2) + epsilon * (1 - epsilon) * E_N_abs;
+	const double E_Npe = epsilon * E_N_abs;
 	
-	return sqrt(Var_Npe / pow(E_Npe, 2) + Var_G_tot / pow(E_G_tot, 2) * 1 / (E_Npe)) * Delta;
-	//return E_Npe;
+	return sqrt(Var_Npe / pow(E_Npe, 2) ) * Delta;
 }
 
 void ER::Get_n_pe_DC(double p)
