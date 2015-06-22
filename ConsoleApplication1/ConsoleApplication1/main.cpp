@@ -29,7 +29,7 @@ int main()
 	ER_object.light_yield = 40.7; // ph/keV at 662 keV
 
 	ER_object.t_gate = 1;
-	ER_object.nu_DC = 0;
+	ER_object.nu_DC = 10;
 	ER_object.p = 0;
 	ER_object.epsilon = 0.28;
 
@@ -63,6 +63,7 @@ int main()
 
 		file_out << i << "\t" << ER_object.GetER() << endl;
 	}
+
 
 
 	file_out.close();
