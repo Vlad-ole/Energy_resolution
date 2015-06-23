@@ -30,7 +30,7 @@ int main()
 
 	ER_object.t_gate = 1;
 	ER_object.nu_DC = 10;
-	ER_object.p = 0;
+	ER_object.p = 0.2;
 	ER_object.epsilon = 0.28;
 
 	ER_object.E_G_tot = 1E6;
@@ -64,8 +64,7 @@ int main()
 		file_out << i << "\t" << ER_object.GetER() << endl;
 	}
 
-
-
+	
 	file_out.close();
 	
 	system("pause");

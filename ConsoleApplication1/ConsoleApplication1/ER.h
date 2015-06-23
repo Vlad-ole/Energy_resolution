@@ -10,6 +10,7 @@ public:
 
 	void Get_n_pe_DC(double p);
 		
+	double E2_n_pe_DC;
 
 	const double Delta;
 
